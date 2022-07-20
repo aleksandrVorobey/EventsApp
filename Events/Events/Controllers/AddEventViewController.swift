@@ -16,10 +16,7 @@ class AddEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "titleSubtitleCell")
-        
+        setupViews()
         viewModel.viewDidLoad()
         
         viewModel.onUpdate = { [weak self] in
@@ -32,11 +29,26 @@ class AddEventViewController: UIViewController {
         viewModel.viewDidDisappear()
     }
     
+    @objc private func tappedDone() {
+        viewModel.tappedDone()
+    }
+    
+    private func setupViews() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "titleSubtitleCell")
+        
+        navigationItem.title = viewModel.title
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
     deinit {
         print("AddEventViewController")
     }
 }
 
+//MARK: - UITableViewDataSource
 extension AddEventViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
@@ -48,9 +60,29 @@ extension AddEventViewController: UITableViewDataSource {
         case .titleSubtitle(let titleSubtitleCellViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: "titleSubtitleCell", for: indexPath) as! TitleSubtitleCell
             cell.update(with: titleSubtitleCellViewModel)
+            cell.subtitleTextField.delegate = self
             return cell
-        case .titleImage:
-            return UITableViewCell()
         }
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension AddEventViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+//MARK: - UITextFieldDelegate(4)
+extension AddEventViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let currentText = textField.text else { return false }
+        let text = currentText + string
+        let point = textField.convert(textField.bounds.origin, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: point) {
+            viewModel.updateCell(indexPath: indexPath, subtitle: text)
+        }
+        return true
     }
 }

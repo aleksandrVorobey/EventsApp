@@ -24,6 +24,7 @@
 		842B01D3288763B700562597 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D2288763B700562597 /* AddEventViewModel.swift */; };
 		842B01D6288821A000562597 /* TitleSubtitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D5288821A000562597 /* TitleSubtitleCellViewModel.swift */; };
 		842B01D92888220000562597 /* TitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D82888220000562597 /* TitleSubtitleCell.swift */; };
+		842B01DB2888880600562597 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01DA2888880600562597 /* ImagePickerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		842B01D2288763B700562597 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
 		842B01D5288821A000562597 /* TitleSubtitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleCellViewModel.swift; sourceTree = "<group>"; };
 		842B01D82888220000562597 /* TitleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleCell.swift; sourceTree = "<group>"; };
+		842B01DA2888880600562597 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +83,8 @@
 				842B01A82885D57700562597 /* AppDelegate.swift */,
 				842B01AA2885D57700562597 /* SceneDelegate.swift */,
 				842B01C7288734BF00562597 /* CoreDataManager.swift */,
-				842B01D7288821EA00562597 /* Views */,
 				842B01D12887601600562597 /* Extensions */,
+				842B01D7288821EA00562597 /* Views */,
 				842B01D428876EE500562597 /* ViewModels */,
 				842B01C32887331700562597 /* Controllers */,
 				842B01C2288732FD00562597 /* Coordinators */,
@@ -101,6 +103,7 @@
 				842B01BC2885D69300562597 /* AppCoordinator.swift */,
 				842B01BE2887179F00562597 /* EventListCoordinator.swift */,
 				842B01CB28875A0C00562597 /* AddEventCoordinator.swift */,
+				842B01DA2888880600562597 /* ImagePickerCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				842B01C8288734BF00562597 /* CoreDataManager.swift in Sources */,
 				842B01BF2887179F00562597 /* EventListCoordinator.swift in Sources */,
 				842B01D6288821A000562597 /* TitleSubtitleCellViewModel.swift in Sources */,
+				842B01DB2888880600562597 /* ImagePickerCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
