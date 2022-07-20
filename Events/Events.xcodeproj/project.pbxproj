@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		842B01A92885D57700562597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01A82885D57700562597 /* AppDelegate.swift */; };
 		842B01AB2885D57700562597 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01AA2885D57700562597 /* SceneDelegate.swift */; };
-		842B01AD2885D57700562597 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01AC2885D57700562597 /* ViewController.swift */; };
 		842B01B02885D57700562597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842B01AE2885D57700562597 /* Main.storyboard */; };
 		842B01B22885D57900562597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842B01B12885D57900562597 /* Assets.xcassets */; };
 		842B01B52885D57900562597 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842B01B32885D57900562597 /* LaunchScreen.storyboard */; };
+		842B01BD2885D69300562597 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01BC2885D69300562597 /* AppCoordinator.swift */; };
+		842B01BF2887179F00562597 /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01BE2887179F00562597 /* EventListCoordinator.swift */; };
+		842B01C12887182600562597 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01C02887182600562597 /* EventListViewController.swift */; };
+		842B01C62887335A00562597 /* EventsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842B01C42887335A00562597 /* EventsApp.xcdatamodeld */; };
+		842B01C8288734BF00562597 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01C7288734BF00562597 /* CoreDataManager.swift */; };
+		842B01CA2887576E00562597 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01C92887576E00562597 /* EventListViewModel.swift */; };
+		842B01CC28875A0C00562597 /* AddEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01CB28875A0C00562597 /* AddEventCoordinator.swift */; };
+		842B01CE28875F1200562597 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01CD28875F1100562597 /* AddEventViewController.swift */; };
+		842B01D02887600000562597 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01CF2887600000562597 /* UIViewController + Extensions.swift */; };
+		842B01D3288763B700562597 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D2288763B700562597 /* AddEventViewModel.swift */; };
+		842B01D6288821A000562597 /* TitleSubtitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D5288821A000562597 /* TitleSubtitleCellViewModel.swift */; };
+		842B01D92888220000562597 /* TitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B01D82888220000562597 /* TitleSubtitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		842B01A52885D57700562597 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842B01A82885D57700562597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842B01AA2885D57700562597 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		842B01AC2885D57700562597 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		842B01AF2885D57700562597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842B01B12885D57900562597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842B01B42885D57900562597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842B01B62885D57900562597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842B01BC2885D69300562597 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		842B01BE2887179F00562597 /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
+		842B01C02887182600562597 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		842B01C52887335A00562597 /* EventsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsApp.xcdatamodel; sourceTree = "<group>"; };
+		842B01C7288734BF00562597 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		842B01C92887576E00562597 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		842B01CB28875A0C00562597 /* AddEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCoordinator.swift; sourceTree = "<group>"; };
+		842B01CD28875F1100562597 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		842B01CF2887600000562597 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		842B01D2288763B700562597 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
+		842B01D5288821A000562597 /* TitleSubtitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleCellViewModel.swift; sourceTree = "<group>"; };
+		842B01D82888220000562597 /* TitleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSubtitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +80,64 @@
 			children = (
 				842B01A82885D57700562597 /* AppDelegate.swift */,
 				842B01AA2885D57700562597 /* SceneDelegate.swift */,
-				842B01AC2885D57700562597 /* ViewController.swift */,
+				842B01C7288734BF00562597 /* CoreDataManager.swift */,
+				842B01D7288821EA00562597 /* Views */,
+				842B01D12887601600562597 /* Extensions */,
+				842B01D428876EE500562597 /* ViewModels */,
+				842B01C32887331700562597 /* Controllers */,
+				842B01C2288732FD00562597 /* Coordinators */,
 				842B01AE2885D57700562597 /* Main.storyboard */,
 				842B01B12885D57900562597 /* Assets.xcassets */,
 				842B01B32885D57900562597 /* LaunchScreen.storyboard */,
 				842B01B62885D57900562597 /* Info.plist */,
+				842B01C42887335A00562597 /* EventsApp.xcdatamodeld */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		842B01C2288732FD00562597 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				842B01BC2885D69300562597 /* AppCoordinator.swift */,
+				842B01BE2887179F00562597 /* EventListCoordinator.swift */,
+				842B01CB28875A0C00562597 /* AddEventCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		842B01C32887331700562597 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				842B01C02887182600562597 /* EventListViewController.swift */,
+				842B01CD28875F1100562597 /* AddEventViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		842B01D12887601600562597 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				842B01CF2887600000562597 /* UIViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		842B01D428876EE500562597 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				842B01C92887576E00562597 /* EventListViewModel.swift */,
+				842B01D2288763B700562597 /* AddEventViewModel.swift */,
+				842B01D5288821A000562597 /* TitleSubtitleCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		842B01D7288821EA00562597 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				842B01D82888220000562597 /* TitleSubtitleCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +211,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842B01AD2885D57700562597 /* ViewController.swift in Sources */,
+				842B01D92888220000562597 /* TitleSubtitleCell.swift in Sources */,
+				842B01BD2885D69300562597 /* AppCoordinator.swift in Sources */,
+				842B01CE28875F1200562597 /* AddEventViewController.swift in Sources */,
+				842B01C12887182600562597 /* EventListViewController.swift in Sources */,
+				842B01CC28875A0C00562597 /* AddEventCoordinator.swift in Sources */,
 				842B01A92885D57700562597 /* AppDelegate.swift in Sources */,
+				842B01D3288763B700562597 /* AddEventViewModel.swift in Sources */,
 				842B01AB2885D57700562597 /* SceneDelegate.swift in Sources */,
+				842B01C62887335A00562597 /* EventsApp.xcdatamodeld in Sources */,
+				842B01D02887600000562597 /* UIViewController + Extensions.swift in Sources */,
+				842B01CA2887576E00562597 /* EventListViewModel.swift in Sources */,
+				842B01C8288734BF00562597 /* CoreDataManager.swift in Sources */,
+				842B01BF2887179F00562597 /* EventListCoordinator.swift in Sources */,
+				842B01D6288821A000562597 /* TitleSubtitleCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		842B01C42887335A00562597 /* EventsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				842B01C52887335A00562597 /* EventsApp.xcdatamodel */,
+			);
+			currentVersion = 842B01C52887335A00562597 /* EventsApp.xcdatamodel */;
+			path = EventsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 842B019D2885D57700562597 /* Project object */;
 }
