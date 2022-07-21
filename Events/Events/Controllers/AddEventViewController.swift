@@ -16,6 +16,7 @@ class AddEventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
         setupViews()
         viewModel.viewDidLoad()
         
@@ -26,11 +27,8 @@ class AddEventViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        print(#function)
         viewModel.viewDidDisappear()
-    }
-    
-    @objc private func tappedDone() {
-        viewModel.tappedDone()
     }
     
     private func setupViews() {
@@ -41,6 +39,10 @@ class AddEventViewController: UIViewController {
         navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
         navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc private func tappedDone() {
+        viewModel.tappedDone()
     }
     
     deinit {

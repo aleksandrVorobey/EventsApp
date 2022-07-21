@@ -22,8 +22,13 @@ final class ImagePickerCoordinator: NSObject, Coordinator {
         imagePickerController.delegate = self
         navigationController.present(imagePickerController, animated: true, completion: nil)
     }
+    
+    deinit {
+        print("ImagePickerCoordinator")
+    }
 }
 
+//MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension ImagePickerCoordinator: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
