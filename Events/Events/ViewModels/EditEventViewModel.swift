@@ -1,19 +1,19 @@
 //
-//  AddEventViewModel.swift
+//  EditEventViewModel.swift
 //  Events
 //
-//  Created by admin on 20.07.2022.
+//  Created by admin on 28.07.2022.
 //
 
 import Foundation
 import UIKit
 
-final class AddEventViewModel {
-    weak var coordinator: AddEventCoordinator?
+final class EditEventViewModel {
+    weak var coordinator: EditEventCoordinator?
     
     var onUpdate: () -> () = {}
     
-    var title = "Add"
+    var title = "Edit"
     
     enum Cell {
         case titleSubtitle(TitleSubtitleCellViewModel)
@@ -26,6 +26,7 @@ final class AddEventViewModel {
     private var backgroundImageCellViewModel: TitleSubtitleCellViewModel?
     private let cellBuilder: EventsCellBuilder
     private let coreDataManager: CoreDataManager
+    private let event: Event
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -33,7 +34,8 @@ final class AddEventViewModel {
         return dateFormatter
     }()
     
-    init(cellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(event: Event, cellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+        self.event = event
         self.cellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
@@ -87,7 +89,7 @@ final class AddEventViewModel {
     }
 }
 //MARK: - Extensions
-private extension AddEventViewModel {
+private extension EditEventViewModel {
     func setupCells() {
         nameCellViewModel = cellBuilder.makeTitleSubtitleCellViewModel(.text)
         dateCellViewModel = cellBuilder.makeTitleSubtitleCellViewModel(.date) { [weak self] in
@@ -103,5 +105,11 @@ private extension AddEventViewModel {
             .titleSubtitle(dateCellViewModel),
             .titleSubtitle(backgroundImageCellViewModel)
         ]
+        
+        guard let name = event.name, let date = event.date, let imageData = event.image, let image = UIImage(data: imageData) else { return }
+        
+        nameCellViewModel.update(name)
+        dateCellViewModel.update(date)
+        backgroundImageCellViewModel.update(image)
     }
 }

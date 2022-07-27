@@ -25,6 +25,7 @@ class EventListViewController: UIViewController {
     
     private func setupViews() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(EventCell.self, forCellReuseIdentifier: "EventCell")
         
         let plusImage = UIImage(systemName: "plus.circle.fill")
@@ -53,6 +54,10 @@ extension EventListViewController: UITableViewDataSource {
             return cell
         }
     }
-    
-    
+}
+
+extension EventListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath)
+    }
 }

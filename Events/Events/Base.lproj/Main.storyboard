@@ -68,6 +68,71 @@
             </objects>
             <point key="canvasLocation" x="716" y="86"/>
         </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="eZ1-5r-3Fh">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" id="f0R-jb-Wpl" customClass="EventDetailViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="shK-vL-rfp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJp-h8-4oh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="110" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OPf-65-23u" customClass="TimeRemainingStackView" customModule="Events" customModuleProvider="target">
+                                <rect key="frame" x="152" y="348" width="110" height="200"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xwv-oh-h0K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="RJp-h8-4oh" secondAttribute="bottom" id="0ZL-Rt-t69"/>
+                            <constraint firstItem="xwv-oh-h0K" firstAttribute="trailing" secondItem="RJp-h8-4oh" secondAttribute="trailing" id="1xn-uo-oly"/>
+                            <constraint firstItem="OPf-65-23u" firstAttribute="centerY" secondItem="shK-vL-rfp" secondAttribute="centerY" id="Rvl-Db-uao"/>
+                            <constraint firstItem="RJp-h8-4oh" firstAttribute="leading" secondItem="xwv-oh-h0K" secondAttribute="leading" id="U26-eB-sGp"/>
+                            <constraint firstItem="RJp-h8-4oh" firstAttribute="top" secondItem="shK-vL-rfp" secondAttribute="top" id="qeX-rZ-nKQ"/>
+                            <constraint firstItem="OPf-65-23u" firstAttribute="centerX" secondItem="shK-vL-rfp" secondAttribute="centerX" id="sS5-VN-kig"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="RJp-h8-4oh" id="5Zt-mW-M6f"/>
+                        <outlet property="timeRemainingStackView" destination="OPf-65-23u" id="vhx-LD-YRh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfa-Ok-oBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="86"/>
+        </scene>
+        <!--Edit Event View Controller-->
+        <scene sceneID="4Mw-ww-Fqq">
+            <objects>
+                <viewController storyboardIdentifier="EditEventViewController" id="fA6-ox-Y7H" customClass="EditEventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lMJ-n1-cq4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mup-Ei-AYA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jsj-SL-Wmm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mup-Ei-AYA" firstAttribute="leading" secondItem="jsj-SL-Wmm" secondAttribute="leading" id="O0T-PP-5wP"/>
+                            <constraint firstItem="jsj-SL-Wmm" firstAttribute="trailing" secondItem="mup-Ei-AYA" secondAttribute="trailing" id="P9J-wD-dyg"/>
+                            <constraint firstItem="jsj-SL-Wmm" firstAttribute="bottom" secondItem="mup-Ei-AYA" secondAttribute="bottom" id="pBV-ob-7pg"/>
+                            <constraint firstItem="mup-Ei-AYA" firstAttribute="top" secondItem="jsj-SL-Wmm" secondAttribute="top" id="uUZ-q0-cJq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="mup-Ei-AYA" id="q4u-If-SLX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeE-LU-vPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2087" y="86"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

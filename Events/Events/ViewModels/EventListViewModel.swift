@@ -16,17 +16,29 @@ final class EventListViewModel {
     }
     
     var onUpdate = {}
+    
     private(set) var cells: [Cell] = []
     
     var coordinator: EventListCoordinator?
-//    private let coreDataManager: CoreDataManager
-//    
-//    init(coreDataManager: CoreDataManager) {
-//        self.coreDataManager = coreDataManager
-//    }
+    private let coreDataManager: CoreDataManager
+    
+    init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
+        self.coreDataManager = coreDataManager
+    }
     
     func viewDidLoad() {
-        cells = [.event(EventCellViewModel()), .event(EventCellViewModel())]
+        reload()
+    }
+    
+    func reload() {
+        let events = coreDataManager.fetchEvents()
+        self.cells = events.map({
+            var eventCellViewModel = EventCellViewModel($0)
+            if let coordinator = coordinator {
+                eventCellViewModel.onSelect = coordinator.onSelect
+            }
+            return .event(eventCellViewModel)
+        })
         onUpdate()
     }
     
@@ -40,5 +52,12 @@ final class EventListViewModel {
     
     func cell(at indexPath: IndexPath) -> Cell {
         cells[indexPath.row]
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        switch cells[indexPath.row] {
+        case .event(let eventCellViewModel):
+            eventCellViewModel.didSelect()
+        }
     }
 }

@@ -11,9 +11,17 @@ import UIKit
 protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get }
     func start()
+    func childDidFinish(_ childCoordinator: Coordinator)
+}
+
+extension Coordinator {
+    func childDidFinish(_ childCoordinator: Coordinator) {
+        
+    }
 }
 
 final class AppCoordinator: Coordinator {
+    
     private(set) var childCoordinators: [Coordinator] = []
     
     private let window: UIWindow
@@ -30,6 +38,5 @@ final class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-    
     
 }

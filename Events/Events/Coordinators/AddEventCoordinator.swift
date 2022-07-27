@@ -24,7 +24,7 @@ final class AddEventCoordinator: Coordinator {
         self.modalNavigationController = UINavigationController()
         let addEventViewController: AddEventViewController = .instantiate()
         modalNavigationController?.setViewControllers([addEventViewController], animated: true)
-        let addEventViewModel = AddEventViewModel(cellBuilder: EventsCellBuilder(), coreDataManager: CoreDataManager())
+        let addEventViewModel = AddEventViewModel(cellBuilder: EventsCellBuilder())
         addEventViewController.viewModel = addEventViewModel
         addEventViewModel.coordinator = self
         if let modalNavigationController = modalNavigationController {
@@ -37,6 +37,7 @@ final class AddEventCoordinator: Coordinator {
     }
     
     func didFinishSaveEvent() {
+        parentCoordinator?.onSaveEvent()
         navigationController.dismiss(animated: true)
     }
     
